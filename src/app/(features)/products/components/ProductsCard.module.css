@@ -29,39 +29,3 @@
     @apply px-3 py-1 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800;
     @apply shadow-sm;
 }
-
-
-/*
-.cardContainer{
-    @apply w-64 p-4 border rounded-lg shadow-sm hover:shadow-lg bg-white;
-}
-
-.cardStock{
-    @apply absolute  right-0 mb-3 px-1 py-1 text-xs font-medium text-white bg-blue-700  hover:bg-blue-800;
-}
-
-.cardImg{
-    @apply h-40 w-full object-cover rounded-t-lg;
-}
-
-.infoContainer{
-    @apply p-5;
-}
-
-.cardTitle{
-    @apply text-sm font-semibold text-gray-900;
-}
-
-.cardInfo{
-    @apply text-xs font-bold text-gray-800 mt-4;
-}
-
-.cardPrice{
-    @apply mb-3 font-bold text-center text-white dark:text-gray-900;
-}
-
-.cardButton{
-    @apply w-full mt-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800;
-    @apply shadow-sm;
-}
-    */
