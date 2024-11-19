@@ -1,0 +1,67 @@
+
+.cardContainer{
+    @apply    w-48 p-4 shadow-sm bg-white border border-gray-400 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg hover:border-metallicBlue hover:bg-gray-100 flex flex-col justify-between;
+}
+
+.cardImg{
+    @apply rounded-t-lg object-cover h-28 w-full ;
+}
+.infoContainer{
+    @apply flex-1 flex flex-col justify-between ;
+}
+
+.cardTitle{
+    @apply mb-2 text-sm text-center font-bold tracking-tight text-gray-900 dark:text-gray-900;
+}
+.cardInfo{
+    @apply mb-3 text-center text-xs font-normal text-gray dark:text-gray-600;
+}
+
+.priceAndButton{
+    @apply flex justify-between items-center mt-2;
+}
+
+.cardPrice{
+    @apply text-sm font-bold text-gray-800;
+}
+
+.cardButton{
+    @apply px-3 py-1 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800;
+    @apply shadow-sm;
+}
+
+
+/*
+.cardContainer{
+    @apply w-64 p-4 border rounded-lg shadow-sm hover:shadow-lg bg-white;
+}
+
+.cardStock{
+    @apply absolute  right-0 mb-3 px-1 py-1 text-xs font-medium text-white bg-blue-700  hover:bg-blue-800;
+}
+
+.cardImg{
+    @apply h-40 w-full object-cover rounded-t-lg;
+}
+
+.infoContainer{
+    @apply p-5;
+}
+
+.cardTitle{
+    @apply text-sm font-semibold text-gray-900;
+}
+
+.cardInfo{
+    @apply text-xs font-bold text-gray-800 mt-4;
+}
+
+.cardPrice{
+    @apply mb-3 font-bold text-center text-white dark:text-gray-900;
+}
+
+.cardButton{
+    @apply w-full mt-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800;
+    @apply shadow-sm;
+}
+    */
