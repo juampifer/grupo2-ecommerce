@@ -1,0 +1,60 @@
+
+.footer {
+  @apply bg-gray-600 text-white py-8 mt-2;
+}
+
+.container {
+  @apply  mx-auto px-4 flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8;
+}
+
+.logoSection{
+  @apply /*flex flex-col items-center space-y-4 md:items-start md:space-y-6*/ flex justify-between items-center w-full mb-6 md:flex-col md:items-start md:space-y-6 md:mb-0;
+}
+
+/*
+.logoStore {
+  @apply flex flex-wrap justify-between items-center mb-1;
+}
+*/
+
+.store {
+  @apply h-4 w-4 text-blue-500 hover:text-blue-400 transition;
+}
+
+.logoGeneral {
+  @apply /*flex flex-wrap justify-center gap-4 mt-4 md:mt-0;*/flex space-x-4 md:flex-wrap md:justify-center md:gap-4
+}
+
+
+
+.twitter {
+  @apply h-4 w-4 text-blue-500 hover:text-blue-400 transition;
+}
+.instagram {
+  @apply h-4 w-4 text-pink-500 hover:text-pink-400 transition;
+}
+.youtube {
+  @apply h-4 w-4 text-red-600 hover:text-red-500 transition;
+}
+.linkedin {
+  @apply h-4 w-4 text-blue-700 hover:text-blue-600 transition;
+}
+
+.listasContainer {
+  @apply /*flex flex-col items-start space-y-4 md:flex-row md:space-y-0 md:space-x-8 md:justify-between;*/ flex flex-col space-y-8 md:flex-row md:justify-center md:space-y-0 md:gap-16;
+}
+
+.listas {
+  @apply flex-1 mt-2 space-y-1;
+}
+.listas p {
+  @apply font-bold text-base;
+}
+.listas ul {
+  @apply mt-2 space-y-1 text-xs;
+}
+
+.listas a {
+  @apply block mt-2 text-sm text-white  hover:underline;
+}
+
