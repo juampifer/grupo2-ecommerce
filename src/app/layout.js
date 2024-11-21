@@ -1,3 +1,4 @@
+import ClientProvider from "./clientProvider";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import "./globals.css";
@@ -11,9 +12,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <ClientProvider>
+          <Header />
+          {children}
+          <Footer />
+        </ClientProvider>
       </body>
     </html>
   );
