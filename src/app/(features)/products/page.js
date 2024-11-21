@@ -7,13 +7,13 @@ import { useProducts } from "./hooks/useProducts";
 const ProductsPage = () => {
   const searchParams = useSearchParams();
   const categoryId = searchParams.get('categoryId') || ''; // obtengo el parámetro desde la URL
-  const { products, loading, error } = useProducts(categoryId);
+  const { products, isLoading, error } = useProducts(categoryId);
 
   return (
     <>
-      {loading && <p>Loading...</p>}
+      {isLoading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
-      {!loading && !error && <ProductsList products={products} />}
+      {!isLoading && !error && <ProductsList products={products} />}
     </>
   );
 };

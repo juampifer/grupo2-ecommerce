@@ -1,25 +1,16 @@
-import { useEffect, useState } from "react";
-import { getProducts } from "../services/productService";
+'use client';
+
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProductsThunk } from "../slices/thunks";
 
 export const useProducts = (categoryId = '') => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  const loadProducts = async () => {
-    try {
-      const data = await getProducts(categoryId);
-      setProducts(data);
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const dispatch = useDispatch();
+  const { products, isLoading, error } = useSelector((state) => state.products);
 
   useEffect(() => {
-    loadProducts();
+    dispatch(fetchProductsThunk(categoryId));
   }, [categoryId]); //volver a consultar los productos si cambia la categoria
 
-  return { products, loading, error };
-}
+  return { products, isLoading, error };
+};
