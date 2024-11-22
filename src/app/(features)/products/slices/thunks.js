@@ -3,7 +3,7 @@ import { setProducts, startLoadingProducts, setError } from "./productSlice";
 
 export const fetchProductsThunk = (categoryId='') => async (dispatch) => {
     try {
-        dispatch(startLoadingProducts(true));
+        dispatch(startLoadingProducts());
         const products = await fetchProducts(categoryId);
         dispatch(setProducts(products));
     } catch (error) {
