@@ -17,6 +17,7 @@ export const productsSlice = createSlice({
             state.error = null; //Limpiar errores en caso de éxito
         },
         setError: (state, action) => {
+            state.isLoading = false;
             state.error = action.payload;
         },
     }

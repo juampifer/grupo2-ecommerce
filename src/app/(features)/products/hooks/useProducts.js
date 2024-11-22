@@ -10,7 +10,7 @@ export const useProducts = (categoryId = '') => {
 
   useEffect(() => {
     dispatch(fetchProductsThunk(categoryId));
-  }, [categoryId]); //volver a consultar los productos si cambia la categoria
+  }, [dispatch, categoryId]); //volver a consultar los productos si cambia la categoria
 
   return { products, isLoading, error };
 };
