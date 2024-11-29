@@ -1,0 +1,41 @@
+.cartContainer {
+  @apply px-4 py-6 space-y-4 max-w-md mx-auto lg:max-w-4xl;
+}
+
+.cartItem {
+  @apply flex items-center justify-between gap-4 p-4 border-b border-gray-300 bg-white shadow-md rounded-md;
+}
+
+.cartItem img {
+  @apply w-16 h-16 object-cover rounded-md;
+}
+
+.quantityControl {
+  @apply flex items-center gap-2;
+}
+
+.quantityControl button {
+  @apply px-2 py-1 bg-gray-200 rounded-md hover:bg-gray-300;
+}
+
+.cartList {
+  @apply flex flex-col gap-2;
+}
+
+.cartPage {
+  @apply p-4 bg-gray-100;
+}
+
+.cardButton {
+  @apply px-3 py-1 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800;
+  @apply shadow-sm;
+}
+
+.payButton {
+  @apply w-full mt-4 px-4 py-2 bg-blue-700 text-white rounded-md hover:bg-blue-800;
+  @apply shadow-sm;
+}
+
+.cartTitle {
+  @apply w-full mb-4 text-xl font-bold text-center;  
+}

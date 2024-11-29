@@ -4,8 +4,12 @@ import { useSearchParams } from "next/navigation";
 import ProductsList from "./components/ProductsList";
 import { useProducts } from "./hooks/useProducts";
 import { useEffect, useState } from "react";
+import { fetchCartItems } from "../cart/slices/cartThunks";
+import { useDispatch, useSelector } from "react-redux";
 
 const ProductsPage = () => {
+  const dispatch = useDispatch();
+  const { items } = useSelector((state) => state.cart);
   const searchParams = useSearchParams();
   const categoryId = searchParams.get('categoryId') || ''; // obtengo el parámetro desde la URL
   const { products, isLoading, error } = useProducts(categoryId);
@@ -14,6 +18,7 @@ const ProductsPage = () => {
   const [showLoading, setShowLoading] = useState(false);
 
   useEffect(() => {
+    dispatch(fetchCartItems());
       if (isLoading) {
           setShowLoading(true);
       } else {
@@ -21,13 +26,13 @@ const ProductsPage = () => {
           const timer = setTimeout(() => setShowLoading(false), 600);
           return () => clearTimeout(timer);
       }
-  }, [isLoading]);
+  }, [dispatch, isLoading]);
 
   return (
     <>
       {showLoading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
-      {!showLoading && !error && <ProductsList products={products} />}
+      {!showLoading && !error && <ProductsList products={products} items={items} />}
     </>
   );
 };
