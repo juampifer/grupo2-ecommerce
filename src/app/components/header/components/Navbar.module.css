@@ -1,0 +1,44 @@
+
+.navBar {
+  @apply bg-gray-800 text-white p-4 flex items-center justify-between;
+}
+
+.container{
+    @apply flex justify-between items-center w-full;
+}
+
+.logoSection{
+    @apply flex justify-between items-center w-full mb-6 md:flex-col md:items-start md:space-y-6 md:mb-0;
+  }
+  
+  .menuSection{
+    @apply flex items-center justify-end w-full gap-6 hidden md:flex; z-index: 50;
+  }
+
+  .showMenu {
+    @apply block absolute top-full left-0 w-full bg-gray-800 text-center md:hidden !important; z-index: 50;
+  }
+  
+  .navbarLinks{
+    @apply flex items-center gap-6 text-white px-8;
+  }
+
+  .category{
+    @apply inline-block py-2 px-4 hover:text-blue-500;
+  }
+
+  .icons{
+    @apply flex items-center gap-4;
+  }
+
+  .search, .cart{
+    @apply text-2xl hover:bg-white hover:text-blue-500 rounded-full p-2 duration-200;
+  }
+
+  .hamburgerMenu{
+    @apply md:hidden;
+  }
+
+  .hamburger {
+    @apply block md:hidden bg-transparent border-none text-white text-2xl cursor-pointer px-8 hover:text-blue-500;
+  }
