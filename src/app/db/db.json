@@ -49,7 +49,86 @@
       "description": "Gigabyte Radeon RX 6500 XT EAGLE 4Gb GDDR6",
       "price": "257141",
       "image": "https://s3-sa-east-1.amazonaws.com/saasargentina/eTOKGh3anBvEu6GiBHRk/imagen"
+    },
+    {
+      "id": 5,
+      "categoryId": 1,
+      "title": "Notebook Enova",
+      "description": "Celeron N4020 4Gb Ssd 128Gb 14 Win11",
+      "price": "287.799",
+      "image": "https://mexx-img-2019.s3.amazonaws.com/Notebook-Enova-Celeron-N4020-4Gb-Ssd-128Gb-14-Win11_47676_1.jpeg"
+    },
+    {
+      "id": 6,
+      "categoryId": 2,
+      "title": "Placa de Video",
+      "description": "GeForce GT 1030 4Gb Msi Oc Low Profile",
+      "price": "110.999",
+      "image": "https://mexx-img-2019.s3.amazonaws.com/Placa-De-Video-GeForce-GT-1030-4Gb-Msi-Oc-Low-Profile_47943_1.jpeg"
+    },
+    {
+      "id": 7,
+      "categoryId": 1,
+      "title": "Notebook Daewoo",
+      "description": "M15 Core i5 8Gb Ssd 512b 15.6 Win 11",
+      "price": "637.999",
+      "image": "https://mexx-img-2019.s3.amazonaws.com/47893_1.jpeg?v791?v516"
+    },
+    {
+      "id": 8,
+      "categoryId": 3,
+      "title": "Teclado",
+      "description": "Logitech Pebble Keys 2 K380S Inalámbrico",
+      "price": "38.929",
+      "image": "https://mexx-img-2019.s3.amazonaws.com/Teclado-Logitech-Pebble-Keys-2-K380S-Inalambrico_47065_1.jpeg"
     }
   ],
-  "cart" : []
+  "offers": [
+    {
+      "id": 1,
+      "categoryId": 4,
+      "title": "Pc Gamer",
+      "description": "Intel Core i5 10400-H510-8Gb-Ssd 960GB-KIT",
+      "price": "404699",
+      "offerPrice":"385000",
+      "image": "https://mexx-img-2019.s3.amazonaws.com/29167_1.jpeg"
+    },
+    {
+      "id": 2,
+      "categoryId": 3,
+      "title": "Silla Gamer",
+      "description": "Corsair TC100 Relaxed Polipiel Negro 45 cm-52 cm",
+      "price": "444099",
+      "offerPrice":"430000",
+      "image": "https://mexx-img-2019.s3.amazonaws.com/Silla-Gamer-Corsair-TC100-Relaxed-Cuero-Negro_47342_1.jpeg"
+    },
+    {
+      "id": 3,
+      "categoryId": 3,
+      "title": "Escaner",
+      "description": "Brother Desktop ADS-1250W Wireless 802.11 b/g/n",
+      "price": "542699",
+      "offerPrice":"498000",
+      "image": "https://mexx-img-2019.s3.amazonaws.com/escaner-scanner_41178_1.jpeg"
+    },
+    {
+      "id": 4,
+      "categoryId": 2,
+      "title": "Placa de Video",
+      "description": "GeForce RTX 4060 Ti 8Gb Gigabyte Eagle Oc",
+      "price": "590999",
+      "offerPrice":"520000",
+      "image": "https://mexx-img-2019.s3.amazonaws.com/Placa-Video-GeForce-RTX-4060-Ti-8Gb-Gigabyte-Eagle-Oc_48197_1.jpeg"
+    },
+    {
+      "id": 5,
+      "categoryId": 1,
+      "title": "Notebook Gfast",
+      "description": "N-140-W Celeron N4020 4Gb Ssd 128Gb 14 Win11",
+      "price": "315449",
+      "offerPrice":"290000",
+      "image": "https://mexx-img-2019.s3.amazonaws.com/47999_1.jpeg"
+    }
+  ],
+  "cart": []
 }
