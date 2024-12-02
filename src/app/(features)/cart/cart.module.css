@@ -39,3 +39,19 @@
 .cartTitle {
   @apply w-full mb-4 text-xl font-bold text-center;  
 }
+
+.cartSummary {
+  @apply flex flex-col mt-2 gap-2 p-4 border-b border-gray-300 bg-white shadow-md rounded-md w-max ml-auto;
+}
+
+.cartSummaryRow {
+  @apply flex justify-between w-full;
+}
+
+.cartSummaryLabel {
+  @apply text-gray-700;
+}
+
+.cartSummaryValue {
+  @apply pl-4 text-right font-semibold;
+}
