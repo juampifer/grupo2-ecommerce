@@ -1,25 +1,25 @@
 {
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "categoryName": "Notebooks"
     },
     {
-      "id": 2,
+      "id": "2",
       "categoryName": "Placa de Video"
     },
     {
-      "id": 3,
+      "id": "3",
       "categoryName": "Periféricos"
     },
     {
-      "id": 4,
+      "id": "4",
       "categoryName": "PC Gamers"
     }
   ],
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "categoryId": 4,
       "title": "Pc Gamer",
       "description": " AMD Ryzen 7 5700G + 16GB (2x8GB) 3200Mhz + Radeon VEGA",
@@ -27,15 +27,15 @@
       "image": "https://s3-sa-east-1.amazonaws.com/saasargentina/TBwmUndFeUruWV3YuVdJ/imagen"
     },
     {
-      "id": 2,
+      "id": "2",
       "categoryId": 3,
-      "title": "Silla Gamer Level Up Ares Verde y Negro",
+      "title": "Silla Gamer ",
       "description": "Soporta hasta 90kg.Almohadillas apoya cervical y lumbar.",
       "price": "271427",
       "image": "https://s3-sa-east-1.amazonaws.com/saasargentina/7vWaTfAX4Crg0YKDxk3g/imagen"
     },
     {
-      "id": 3,
+      "id": "3",
       "categoryId": 3,
       "title": "Monitor Gamer ",
       "description": "Cooler Master GA241 24 100Hz 1Ms VA Adaptive Sync",
@@ -43,7 +43,7 @@
       "image": "https://s3-sa-east-1.amazonaws.com/saasargentina/VCrsC7HKfRdESXySnFBD/imagen"
     },
     {
-      "id": 4,
+      "id": "4",
       "categoryId": 2,
       "title": "Placa de Video",
       "description": "Gigabyte Radeon RX 6500 XT EAGLE 4Gb GDDR6",
@@ -51,5 +51,5 @@
       "image": "https://s3-sa-east-1.amazonaws.com/saasargentina/eTOKGh3anBvEu6GiBHRk/imagen"
     }
   ],
-  "cart" : []
+  "cart": []
 }
