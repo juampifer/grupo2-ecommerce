@@ -24,7 +24,7 @@
   }
 
   .category{
-    @apply inline-block py-2 px-4 hover:text-blue-500;
+    @apply inline-block py-2 px-4 hover:text-blue-500 whitespace-nowrap;
   }
 
   .icons{
