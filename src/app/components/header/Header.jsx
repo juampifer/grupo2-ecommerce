@@ -4,8 +4,8 @@ import Navbar from "./components/Navbar";
 
 const Header = () => {
   return (
-    <div>
-      <Navbar />
+    <div className='overflow-x-hidden'>
+        <Navbar/>
     </div>
   );
 };
