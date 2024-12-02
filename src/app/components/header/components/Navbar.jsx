@@ -14,7 +14,6 @@ const Navbar = () => {
   
   const hamburgerMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    console.log('Menu state:', !isMenuOpen);
   };
 
   return (
@@ -25,13 +24,13 @@ const Navbar = () => {
             Logo
           </Link>
         </div>
-        <button className={styles.hamburger} onClick={() => hamburgerMenu(false)}>
+        <button className={styles.hamburger} onClick={hamburgerMenu}>
           <MdMenu/>
         </button>
       </div>
       
-      <div className={`${styles.menuSection} ${isMenuOpen ? styles.showMenu : ''}`}>
-        <ul className={styles.navbarLinks}>
+      <div className={styles.menuLarge}>
+      <ul className={styles.navbarLinks}>
           {categories.map((category) => (
             <li key = {category.id}>
               <Link href={`/products?categoryId=${category.id}`} className={styles.category}>
@@ -41,6 +40,21 @@ const Navbar = () => {
           ))}
         </ul> 
       </div>
+
+      {isMenuOpen && (
+          <div className={styles.menuSmall}>
+            <ul className={styles.navbarLinksSmall}>
+              {categories.map((category) => (
+                <li key={category.id}>
+                  <Link href={`/products?categoryId=${category.id}`} className={styles.categorySmall}>
+                    {category.categoryName}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
 
       <div className={styles.icons}>
         <button className={styles.search}>
