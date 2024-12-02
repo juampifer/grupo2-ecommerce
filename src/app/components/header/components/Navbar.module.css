@@ -1,6 +1,6 @@
 
 .navBar {
-  @apply bg-gray-800 text-white p-4 flex items-center justify-between;
+  @apply bg-gray-800 text-white p-4 flex items-center justify-between relative;
 }
 
 .container{
@@ -11,20 +11,12 @@
     @apply flex justify-between items-center w-full mb-6 md:flex-col md:items-start md:space-y-6 md:mb-0;
   }
   
-  .menuSection{
-    @apply flex items-center justify-end w-full gap-6 hidden md:flex; z-index: 50;
-  }
-
-  .showMenu {
-    @apply block absolute top-full left-0 w-full bg-gray-800 text-center md:hidden !important; z-index: 50;
-  }
-  
   .navbarLinks{
     @apply flex items-center gap-6 text-white px-8;
   }
 
   .category{
-    @apply inline-block py-2 px-4 hover:text-blue-500;
+    @apply inline-block py-2 px-4 hover:text-blue-500 whitespace-nowrap;
   }
 
   .icons{
@@ -42,3 +34,32 @@
   .hamburger {
     @apply block md:hidden bg-transparent border-none text-white text-2xl cursor-pointer px-8 hover:text-blue-500;
   }
+
+  /* Menú para pantallas grandes */
+  .menuLarge {
+    @apply hidden md:block;
+  }
+
+  .navbarLinks {
+    @apply flex gap-4;
+  }
+
+  .category {
+    @apply py-2 px-4 hover:text-blue-500;
+  }
+
+  /* Menú para pantallas pequeñas */
+  .menuSmall {
+    @apply absolute md:hidden top-full left-0 w-full bg-gray-800 text-white p-4 z-50;
+    @apply transition-transform transform duration-300 ease-in-out;
+  }
+
+  .navbarLinksSmall {
+    @apply flex flex-col gap-4;
+  }
+
+  .categorySmall {
+    @apply py-2 px-4 hover:text-blue-500;
+  }
+
+
