@@ -7,8 +7,18 @@ import { IoSearchOutline, IoCartOutline } from "react-icons/io5";
 import { MdMenu } from "react-icons/md";
 import { useState } from 'react';
 import Link from 'next/link';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+
+  const { items } = useSelector((state) => state.cart);
+
+  // Total de ítems del carrito
+  const totalItems = items.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
   const categories = data.categories;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
@@ -62,7 +72,10 @@ const Navbar = () => {
         </button>
         <button className={styles.cart}>
           <Link href={`/cart`}>
-            <IoCartOutline/>
+            <IoCartOutline />
+              {totalItems > 0 && (
+                <span className={styles.itemCount}>{totalItems}</span>
+              )}
           </Link>
         </button>
       </div>
