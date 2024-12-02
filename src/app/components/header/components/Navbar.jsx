@@ -20,7 +20,11 @@ const Navbar = () => {
   return (
     <nav className={styles.navBar}>
       <div className={styles.container}>
-        <div className={styles.logoSection}>Logo</div>
+        <div className={styles.logoSection}>
+          <Link href={`/`}>
+            Logo
+          </Link>
+        </div>
         <button className={styles.hamburger} onClick={() => hamburgerMenu(false)}>
           <MdMenu/>
         </button>
