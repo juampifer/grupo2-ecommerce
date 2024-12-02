@@ -4,7 +4,6 @@ import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import OffersCard from "./OffersCard"; // Importa tu componente de card
-import styles from "./OwlCarousel.module.css";
 import data from "../../db/db.json"; // Importa tus datos desde el archivo JSON
 
 
