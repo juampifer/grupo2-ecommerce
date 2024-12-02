@@ -1,13 +1,12 @@
 import ProductsPage from "./(features)/products/page";
 import OwlCarousel from "./(features)/owl-carousel/OwlCarousel";
-import Video from "./(features)/video-nvidia/Video";
-
+import HomeImg from "./(features)/home-img/HomeImg";
 import React from "react";
 
 const Home = () => {
   return (
     <main>
-      <Video />
+      <HomeImg />
       <OwlCarousel />
       <ProductsPage />
     </main>
