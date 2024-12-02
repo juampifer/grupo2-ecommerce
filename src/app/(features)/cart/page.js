@@ -4,10 +4,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCartItems } from "./slices/cartThunks";
 import CartList from "./components/CartList";
 import styles from "./cart.module.css";
+import CartSummary from "./components/CartSummary";
 
 const CartPage = () => {
   const dispatch = useDispatch();
   const { items, status, error } = useSelector((state) => state.cart);
+
+  // Total de ítems del carrito
+  const totalItems = items.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+  // Precio total de la compra
+  const totalAmount = items.reduce(
+    (total, item) => total + item.quantity * item.price,
+    0
+  );
 
   useEffect(() => {
     if (status === "idle") {
@@ -24,8 +36,8 @@ const CartPage = () => {
       {items.length ? (
         <>
           <CartList items={items} />
-          <button className={styles.payButton}>
-            Pagar</button>
+          <CartSummary itemCount={totalItems} total={totalAmount} />
+          <button className={styles.payButton}>Pagar</button>
         </>
       ) : (
         <p>El carrito está vacío.</p>
