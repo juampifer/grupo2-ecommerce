@@ -4,15 +4,17 @@ import { SiLinkedin, SiYoutube, SiInstagram } from "react-icons/si";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { BiSolidStore } from "react-icons/bi";
 import styles from "./Footer.module.css";
+import Link from "next/link";
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.logoSection}>
-          
+          <Link href={`/`}>
             <BiSolidStore className={styles.store} />
-          
+          </Link>
+            
           <div className={styles.logoGeneral}>
             <a
               href="https://twitter.com"
