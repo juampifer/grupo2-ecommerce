@@ -1,6 +1,18 @@
 "use client";
+import { useDispatch } from "react-redux";
 import styles from "./OffersCard.module.css";
-const OffersCard = ({ title, description, price,offerPrice, image }) => {
+import { addCartItem } from "../cart/slices/cartThunks";
+const OffersCard = ({ id, title, description, price,offerPrice, image, items }) => {
+  const dispatch = useDispatch();
+
+  const handleIncrement = () => {
+    const existingItem = items.find((item) => item.id === id);
+    if (!existingItem) {
+      dispatch(
+        addCartItem({ id, title, description, price, image, quantity: 1 })
+      );
+    }
+  };
   return (
     <div className={styles.cardContainer}>
       <img className={styles.cardImg} src={image} alt={title} />
@@ -10,9 +22,12 @@ const OffersCard = ({ title, description, price,offerPrice, image }) => {
         <div className={styles.priceAndButton}>
           <p className={styles.cardPrice}>${price}</p>
           <h5 className={styles.cardOfferPrice}>${offerPrice}</h5>
-          <a href="#" className={styles.cardButton}>
+          <button
+            className={styles.cardButton}
+            onClick={() => handleIncrement(id)}
+          >
             Comprar
-          </a>
+          </button>
         </div>
       </div>
     </div>

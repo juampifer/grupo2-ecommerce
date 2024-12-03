@@ -1,13 +1,17 @@
 
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import OffersCard from "./OffersCard"; // Importa tu componente de card
 import data from "../../db/db.json"; // Importa tus datos desde el archivo JSON
+import { useSelector } from "react-redux";
 
 
 const OwlCarousel = () => {
+  const { items } = useSelector((state) => state.cart);
+  const offers = data.products.filter((product)=>product.offerPrice);
+
   const responsive = {
     superLargeDesktop: { breakpoint: { max: 4000, min: 1024 }, items: 4 },
     desktop: { breakpoint: { max: 1024, min: 768 }, items: 3 },
@@ -28,14 +32,16 @@ const OwlCarousel = () => {
         className="px-4 mb-8 pb-10"
         
       >
-        {data.offers.map((offer) => (
+        {offers.map((offer) => (
           <OffersCard
             key={offer.id}
+            id={offer.id}
             title={offer.title}
             description={offer.description}
             price={offer.price}
             offerPrice={offer.offerPrice}
             image={offer.image}
+            items={items}
           />
         ))}
       </Carousel>

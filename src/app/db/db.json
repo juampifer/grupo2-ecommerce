@@ -81,11 +81,9 @@
       "description": "Logitech Pebble Keys 2 K380S Inalámbrico",
       "price": "38929",
       "image": "https://mexx-img-2019.s3.amazonaws.com/Teclado-Logitech-Pebble-Keys-2-K380S-Inalambrico_47065_1.jpeg"
-    }
-  ],
-  "offers": [
+    },
     {
-      "id": 1,
+      "id": "9",
       "categoryId": 4,
       "title": "Pc Gamer",
       "description": "Intel Core i5 10400-H510-8Gb-Ssd 960GB-KIT",
@@ -94,7 +92,7 @@
       "image": "https://mexx-img-2019.s3.amazonaws.com/29167_1.jpeg"
     },
     {
-      "id": 2,
+      "id": "10",
       "categoryId": 3,
       "title": "Silla Gamer",
       "description": "Corsair TC100 Relaxed Polipiel Negro 45 cm-52 cm",
@@ -103,7 +101,7 @@
       "image": "https://mexx-img-2019.s3.amazonaws.com/Silla-Gamer-Corsair-TC100-Relaxed-Cuero-Negro_47342_1.jpeg"
     },
     {
-      "id": 3,
+      "id": "11",
       "categoryId": 3,
       "title": "Escaner",
       "description": "Brother Desktop ADS-1250W Wireless 802.11 b/g/n",
@@ -112,7 +110,7 @@
       "image": "https://mexx-img-2019.s3.amazonaws.com/escaner-scanner_41178_1.jpeg"
     },
     {
-      "id": 4,
+      "id": "12",
       "categoryId": 2,
       "title": "Placa de Video",
       "description": "GeForce RTX 4060 Ti 8Gb Gigabyte Eagle Oc",
@@ -121,7 +119,7 @@
       "image": "https://mexx-img-2019.s3.amazonaws.com/Placa-Video-GeForce-RTX-4060-Ti-8Gb-Gigabyte-Eagle-Oc_48197_1.jpeg"
     },
     {
-      "id": 5,
+      "id": "13",
       "categoryId": 1,
       "title": "Notebook Gfast",
       "description": "N-140-W Celeron N4020 4Gb Ssd 128Gb 14 Win11",
