@@ -8,6 +8,8 @@ import { MdMenu } from "react-icons/md";
 import { useState } from 'react';
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
+import { useSearchParams } from 'next/navigation';
+import Logo from './Logo';
 
 const Navbar = () => {
 
@@ -21,7 +23,9 @@ const Navbar = () => {
 
   const categories = data.categories;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
+  const searchParams = useSearchParams();
+  const activeCategoryId = searchParams.get('categoryId'); 
+
   const hamburgerMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -31,7 +35,7 @@ const Navbar = () => {
       <div className={styles.container}>
         <div className={styles.logoSection}>
           <Link href={`/`}>
-            Logo
+            <Logo/>
           </Link>
         </div>
         <button className={styles.hamburger} onClick={hamburgerMenu}>
@@ -43,7 +47,14 @@ const Navbar = () => {
       <ul className={styles.navbarLinks}>
           {categories.map((category) => (
             <li key = {category.id}>
-              <Link href={`/products?categoryId=${category.id}`} className={styles.category}>
+              <Link
+                href={`/products?categoryId=${category.id}`}
+                className={`${styles.category} ${
+                  activeCategoryId === String(category.id)
+                    ? styles.active
+                    : ''
+                }`}
+              >
                 {category.categoryName}
               </Link>
             </li>
@@ -56,7 +67,14 @@ const Navbar = () => {
             <ul className={styles.navbarLinksSmall}>
               {categories.map((category) => (
                 <li key={category.id}>
-                  <Link href={`/products?categoryId=${category.id}`} className={styles.categorySmall}>
+                  <Link
+                    href={`/products?categoryId=${category.id}`}
+                    className={`${styles.categorySmall} ${
+                      activeCategoryId === String(category.id)
+                        ? styles.active
+                        : ''
+                    }`}
+                  >
                     {category.categoryName}
                   </Link>
                 </li>
