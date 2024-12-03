@@ -8,7 +8,7 @@
 }
 
 .logoSection{
-    @apply flex justify-between items-center w-full mb-6 md:flex-col md:items-start md:space-y-6 md:mb-0;
+    @apply flex items-center gap-6 text-white;
   }
   
   .navbarLinks{
@@ -33,6 +33,10 @@
 
   .hamburger {
     @apply block md:hidden bg-transparent border-none text-white text-2xl cursor-pointer px-8 hover:text-blue-500;
+  }
+
+  .active {
+    @apply text-blue-500 font-bold;
   }
 
   /* Menú para pantallas grandes */
