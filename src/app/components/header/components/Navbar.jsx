@@ -85,9 +85,9 @@ const Navbar = () => {
 
 
       <div className={styles.icons}>
-        <button className={styles.search}>
+        {/* <button className={styles.search}>
           <IoSearchOutline/>
-        </button>
+        </button> */}
         <button className={styles.cart}>
           <Link href={`/cart`}>
             <IoCartOutline />
