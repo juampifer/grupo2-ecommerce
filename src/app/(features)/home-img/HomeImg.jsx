@@ -12,7 +12,7 @@ const HomeImg = () => {
         />
         <div className={styles.infoContainer}>
           <div className={styles.title}>
-            <h4>Titulo Nvidia</h4>
+            <h4>Nvidia</h4>
           </div>
           <div className={styles.info}>
             <p>
