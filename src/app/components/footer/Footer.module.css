@@ -1,5 +1,5 @@
 .footer {
-  @apply bg-gray-600 text-white py-8 mt-2;
+  @apply bg-gray-800 text-white py-8 mt-2;
 }
 
 .container {
