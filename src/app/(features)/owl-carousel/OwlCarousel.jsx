@@ -18,22 +18,25 @@ const OwlCarousel = () => {
     tablet: { breakpoint: { max: 768, min: 464 }, items: 2 },
     mobile: { breakpoint: { max: 464, min: 0 }, items: 1 },
   };
-
+  
   return (
-    <div className="relative bg-gray-600 py-8 mt-4 flex justify-center">
-      <Carousel
+    <div className="relative bg-gray-700 py-8 mt-4 flex justify-center">
       
+      <Carousel
+        
         responsive={responsive}
         infinite={true}
         autoPlay={true}
         autoPlaySpeed={3000}
         showDots={true}
         dotListClass="flex justify-center space-x-2 mt-6"
-        className="px-4 mb-8 pb-10"
+        className="px-16  mb-8 pb-10"
+        centerMode={false}
         
       >
         {offers.map((offer) => (
           <OffersCard
+          
             key={offer.id}
             id={offer.id}
             title={offer.title}
