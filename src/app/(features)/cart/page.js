@@ -1,10 +1,12 @@
 "use client";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCartItems } from "./slices/cartThunks";
+import { clearCartThunk, fetchCartItems } from "./slices/cartThunks";
 import CartList from "./components/CartList";
 import styles from "./cart.module.css";
 import CartSummary from "./components/CartSummary";
+import { showAlert, showConfirm } from "@/app/utils/alertHelper";
+import { clearCart } from "./slices/cartSlice";
 
 const CartPage = () => {
   const dispatch = useDispatch();
@@ -27,6 +29,29 @@ const CartPage = () => {
     }
   }, [dispatch, status]);
 
+  const handleCheckout = async () => {
+    if (!items.length) {
+      showAlert('Carrito vacío', 'Agrega productos antes de pagar.', 'error');
+      return;
+    }
+
+    const confirmed = await showConfirm(
+      '¿Confirmar compra?',
+      '¿Estás seguro de proceder con el pago?',
+      'question'
+    );
+
+    if (confirmed) {
+      try {
+        await dispatch(clearCartThunk(items)).unwrap(); //elimina los items del server
+        dispatch(clearCart()); //elimina los items del store
+        showAlert('Compra realizada', 'Gracias por tu compra.');
+      } catch (error) {
+        showAlert('Error', `Hubo un problema al procesar tu compra, intenta nuevamente más tarde.`, 'error');
+      }
+    }
+  };
+
   if (status === "idle" || status === "loading") return <p>Cargando...</p>;
   if (error) return <p>Error: {error}</p>;
 
@@ -37,7 +62,7 @@ const CartPage = () => {
         <>
           <CartList items={items} />
           <CartSummary itemCount={totalItems} total={totalAmount} />
-          <button className={styles.payButton}>Pagar</button>
+          <button className={styles.payButton} onClick={handleCheckout}>Pagar</button>
         </>
       ) : (
         <p>El carrito está vacío.</p>

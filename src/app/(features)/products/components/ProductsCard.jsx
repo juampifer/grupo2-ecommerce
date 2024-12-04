@@ -1,4 +1,5 @@
 "use client";
+import { showAlert } from "@/app/utils/alertHelper";
 import { addCartItem, fetchCartItems } from "../../cart/slices/cartThunks";
 import styles from "./ProductsCard.module.css";
 import { useDispatch } from "react-redux";
@@ -9,9 +10,10 @@ const ProductsCard = ({ id, title, description, price, image, items }) => {
   const handleIncrement = () => {
     const existingItem = items.find((item) => item.id === id);
     if (!existingItem) {
-      dispatch(
-        addCartItem({ id, title, description, price, image, quantity: 1 })
-      );
+      dispatch(addCartItem({ id, title, description, price, image, quantity: 1 }));
+      showAlert('Producto agregado al carrito', `${title}`);
+    }else{
+      showAlert(`Si desea agregar más ${title}`, `Debe hacerlo desde el carrito de compras`);
     }
   };
   return (
