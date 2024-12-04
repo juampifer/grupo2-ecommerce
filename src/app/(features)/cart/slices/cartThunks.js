@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchCart, addToCart, updateCartItem, deleteCartItem } from '../services/cartService';
+import { fetchCart, addToCart, updateCartItem, deleteCartItem, clearCart } from '../services/cartService';
 
 export const fetchCartItems = createAsyncThunk(
   'cart/fetchCartItems',
@@ -40,6 +40,18 @@ export const deleteCartItemThunk = createAsyncThunk(
       return await deleteCartItem(id);
     } catch (error) {
       return rejectWithValue(error.response?.data || error.message);
+    }
+  }
+);
+
+export const clearCartThunk = createAsyncThunk(
+  "cart/clearCart",
+  async (items, { rejectWithValue }) => {
+    try {
+      await clearCart(items);
+      return { success: true }; 
+    } catch (error) {
+      return rejectWithValue("No se pudo limpiar el carrito");
     }
   }
 );

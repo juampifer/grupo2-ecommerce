@@ -2,18 +2,35 @@ import React from "react";
 import styles from "../cart.module.css";
 import { useDispatch } from "react-redux";
 import { addCartItem, deleteCartItemThunk } from "../slices/cartThunks";
+import { showAlert, showConfirm } from "@/app/utils/alertHelper";
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
 
-  const handleIncrement = () =>
+  const handleIncrement = () =>{
     dispatch(addCartItem({ ...item, quantity: item.quantity + 1 }));
+    showAlert('Cantidad actualizada', `${item.title}: ${item.quantity + 1}`);
+  }
+
   const handleDecrement = () => {
     if (item.quantity > 1) {
       dispatch(addCartItem({ ...item, quantity: item.quantity - 1 }));
+      showAlert('Cantidad actualizada', `${item.title}: ${item.quantity - 1}`);
+    } else {
+      showAlert('Operación inválida', 'No puedes tener menos de 1 unidad.', 'error');
     }
   };
-  const handleRemove = () => dispatch(deleteCartItemThunk(item.id));
+  const handleRemove = async () => {
+    const confirmed = await showConfirm(
+      '¿Eliminar producto?',
+      `¿Estás seguro de eliminar ${item.title} del carrito?`,
+      'warning'
+    );
+    if (confirmed) {
+      dispatch(deleteCartItemThunk(item.id));
+      showAlert('Eliminado', `${item.title} fue eliminado del carrito.`, 'info');
+    }
+  };
 
   return (
     <div className={styles.cartItem}>

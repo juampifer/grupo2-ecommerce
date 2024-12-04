@@ -21,3 +21,14 @@ export const deleteCartItem = async (id) => {
   const response = await axios.delete(`${API_URL}/${id}`);
   return response.data;
 };
+
+export const clearCart = async (items) => {
+  try {
+    const promises = items.map((item) => axios.delete(`${API_URL}/${item.id}`));
+    await Promise.all(promises);
+    return { success: true };
+  } catch (error) {
+    console.error("Error al limpiar el carrito:", error);
+    throw error;
+  }
+};
