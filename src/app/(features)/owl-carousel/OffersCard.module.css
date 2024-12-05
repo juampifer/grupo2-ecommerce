@@ -30,6 +30,6 @@
 }
 
 .cardButton{
-    @apply px-3 py-1 text-xs font-medium text-center text-white bg-blue-950 rounded-lg hover:bg-blue-800;
+    @apply px-3 py-1 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800;
     @apply shadow-sm;
 }
