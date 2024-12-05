@@ -3,6 +3,7 @@ import styles from "../cart.module.css";
 import { useDispatch } from "react-redux";
 import { addCartItem, deleteCartItemThunk } from "../slices/cartThunks";
 import { showAlert, showConfirm } from "@/app/utils/alertHelper";
+import { BiTrash } from "react-icons/bi";
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
@@ -44,12 +45,14 @@ const CartItem = ({ item }) => {
         <span className="font-semibold">{item.quantity}</span>
         <button onClick={() => handleIncrement(item.id)}>+</button>
       </div>
-      <button
-        onClick={() => handleRemove(item.id)}
-        className="text-red-500 text-sm hover:underline"
-      >
-        Eliminar
-      </button>
+      <div>
+        <button
+          onClick={() => handleRemove(item.id)}
+          className="text-red-500"
+        >
+          <BiTrash className={styles.trashIcon} />
+        </button>
+      </div>
     </div>
   );
 };
