@@ -55,3 +55,22 @@
 .cartSummaryValue {
   @apply pl-4 text-right font-semibold;
 }
+
+.trashIcon {
+  @apply h-6 w-6 hover:text-black transition;
+}
+
+@media (max-width: 320px) {
+  .cartItem {
+    @apply gap-2;
+  }
+
+  .cartItem img {
+    @apply w-10 h-10;
+  }
+
+  .quantityControl {
+    @apply gap-1;
+  }
+
+}
