@@ -16,7 +16,7 @@
 }
 
 .store,.twitter, .instagram, .youtube, .linkedin {
-  @apply h-6 w-6 text-black hover:text-white transition;
+  @apply h-6 w-6 text-white hover:text-black transition;
 }
 
 .listasContainer {

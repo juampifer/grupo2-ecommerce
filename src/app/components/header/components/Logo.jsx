@@ -7,8 +7,8 @@ const Logo = () => {
           viewBox="0 0 100 100"
           style={{ display: "block", margin: "auto" }}
         >
-          {/* Fondo circular azul */}
-          <circle cx="50" cy="50" r="48" fill="#1d4ed8" />
+          {/* Fondo circular*/}
+          <circle cx="50" cy="50" r="48" fill="#374151" />
           
           {/* Texto estilizado */}
           <text
