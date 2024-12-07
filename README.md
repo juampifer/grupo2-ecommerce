@@ -1,6 +1,10 @@
+## Descripción
+
+Es un carrito de compras básico hecho en NextJS 15, donde se utilizó React con tailwind para la UI, Javascript como lenguaje de programación, el patrón redux(usando RTK) para el manejo del estado global, además para mejorar la experiencia de usuario se utilizó SweetAlert2. Para emular el backend con sus endpoints se utilizó json-server.  
+
 ## Guía de inicio
 
-Pasos para ejecutar el server de desarrollo:
+Una vez clonado el repositorio, se deben seguir los siguientes pasos para ejecutar el server:
 
 ```bash
 1) npm install
