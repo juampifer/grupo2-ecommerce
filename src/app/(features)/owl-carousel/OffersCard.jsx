@@ -9,7 +9,7 @@ const OffersCard = ({ id, title, description, price,offerPrice, image, items }) 
   const handleIncrement = () => {
     const existingItem = items.find((item) => item.id === id);
     if (!existingItem) {
-      dispatch(addCartItem({ id, title, description, price, image, quantity: 1 }));
+      dispatch(addCartItem({ id, title, description, price, image, quantity: 1, offerPrice}));
       showAlert('Producto agregado al carrito', `${title}`);
     }else{
       showAlert(`Si desea agregar más ${title}`, `Debe hacerlo desde el carrito de compras`);
