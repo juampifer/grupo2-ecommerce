@@ -38,7 +38,14 @@ const CartItem = ({ item }) => {
       <img src={item.image} alt={item.title} />
       <div className="flex-1">
         <h4 className="text-lg font-bold">{item.title}</h4>
-        <p className="text-sm text-gray-600">${item.price}</p>
+        {item.offerPrice ? (
+          <>
+            <p className="text-sm text-gray-600 line-through">${item.price}</p>
+            <p className="text-sm text-gray-600">${item.offerPrice}</p>
+          </>
+        ) : (
+          <p className="text-sm text-gray-600">${item.price}</p>
+        )}
       </div>
       <div className={styles.quantityControl}>
         <button onClick={() => handleDecrement(item.id)}>-</button>

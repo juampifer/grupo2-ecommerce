@@ -19,7 +19,7 @@ const CartPage = () => {
   );
   // Precio total de la compra
   const totalAmount = items.reduce(
-    (total, item) => total + item.quantity * item.price,
+    (total, item) => total + item.quantity * (item.offerPrice ? item.offerPrice : item.price),
     0
   );
 
