@@ -42,7 +42,7 @@ const OwlCarousel = () => {
           
             key={offer.id}
             id={offer.id}
-            title={offer.title}
+            name={offer.name}
             description={offer.description}
             price={offer.price}
             offerPrice={offer.offerPrice}

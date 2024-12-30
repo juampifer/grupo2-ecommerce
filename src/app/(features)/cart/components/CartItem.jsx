@@ -10,13 +10,13 @@ const CartItem = ({ item }) => {
 
   const handleIncrement = () =>{
     dispatch(addCartItem({ ...item, quantity: item.quantity + 1 }));
-    showAlert('Cantidad actualizada', `${item.title}: ${item.quantity + 1}`);
+    showAlert('Cantidad actualizada', `${item.name}: ${item.quantity + 1}`);
   }
 
   const handleDecrement = () => {
     if (item.quantity > 1) {
       dispatch(addCartItem({ ...item, quantity: item.quantity - 1 }));
-      showAlert('Cantidad actualizada', `${item.title}: ${item.quantity - 1}`);
+      showAlert('Cantidad actualizada', `${item.name}: ${item.quantity - 1}`);
     } else {
       showAlert('Operación inválida', 'No puedes tener menos de 1 unidad.', 'error');
     }
@@ -24,20 +24,20 @@ const CartItem = ({ item }) => {
   const handleRemove = async () => {
     const confirmed = await showConfirm(
       '¿Eliminar producto?',
-      `¿Estás seguro de eliminar ${item.title} del carrito?`,
+      `¿Estás seguro de eliminar ${item.name} del carrito?`,
       'warning'
     );
     if (confirmed) {
       dispatch(deleteCartItemThunk(item.id));
-      showAlert('Eliminado', `${item.title} fue eliminado del carrito.`, 'info');
+      showAlert('Eliminado', `${item.name} fue eliminado del carrito.`, 'info');
     }
   };
 
   return (
     <div className={styles.cartItem}>
-      <img src={item.image} alt={item.title} />
+      <img src={item.image} alt={item.name} />
       <div className="flex-1">
-        <h4 className="text-lg font-bold">{item.title}</h4>
+        <h4 className="text-lg font-bold">{item.name}</h4>
         {item.offerPrice ? (
           <>
             <p className="text-sm text-gray-600 line-through">${item.price}</p>
